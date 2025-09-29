@@ -230,3 +230,32 @@ footer {
 .float-in-top {
   animation: floatInFromTop 1s ease-out forwards;
 }
+
+@media screen and (max-width: 1100px) {
+  body, html {
+    flex-direction: column;
+  }
+
+  .top {
+    text-align: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .card-content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}

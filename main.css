@@ -83,7 +83,6 @@ body, html {
 
 /* Content */
 .content {
-  margin-left: 10%;
   padding: 3rem;
   flex: 1;
 }

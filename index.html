@@ -55,7 +55,7 @@
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm a Sophomore at Northwestern University studying Computer Science. I currently work in my school's mail room and as a teaching assistant. I'm also interested in quantum computing. In my free time, I enjoy playing ping pong. Feel free to explore my projects below.
+        I'm a Sophomore at Northwestern University studying Computer Science and Mathematics. I currently work in my school's mail room and as a teaching assistant. I'm also interested in quantum computing. In my free time, I enjoy playing ping pong. Feel free to explore my projects below.
       </p>
     </section>
 
@@ -77,13 +77,20 @@
         Northwestern University 2024-2028
       </h3>
       <p>
-        Coursework: MENU Linear Algebra and Multivariable Calculus, Data Structures and Algorithms, Human Computer Interaction.
+        Coursework: MENU Linear Algebra and Multivariable Calculus, Data Structures and Algorithms, Operating Systems, Discrete Mathematics, Human Computer Interaction.
       </p>
     </section>
 
     <!-- Work Experience -->
     <section id="experience" class="section">
       <h2>Work Experience</h2>
+      <div class="card">
+        <div class="card-title">
+          <h3>Backend Developer — Northwestern Develop + Innovation for Social Change (DISC) (January 2026 - Present)</h3>
+        </div>
+        <div class="card-content">
+        </div> 
+      </div>
       <div class="card">
         <div class="card-title">
           <h3>Teaching Assistant — Northwestern University Computer Science Department (January 2026 - Present)</h3>
@@ -129,7 +136,7 @@
             historical data. Results are shown in an interactive React + FastAPI dashboard.
           </p>
           <p>Tech Used: React, FastAPI, Python, Sqlite3, Typescript, CSS, NumPy, Pandas, TensorFlow, Yahooquery</p>
-          <div class="video-container">
+          <div id="stock_forecast" class="video-container">
             <video controls width="100%">
               <source src="demos\Stock_Forecast_Demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -152,7 +159,7 @@
             This project analyzes golf swings and classifies them as either Pro or Amateur using a Random Forest Classification model and pose estimation. Users can upload videos and see predictions via the Flask web app. 
           </p>
           <p>Tech Used: Python, Mediapipe, Flask, scikit-learn, NumpPy, OpenCV, Javascript, HTML, CSS</p>
-          <div class="video-container">
+          <div id="golf" class="video-container">
             <video controls width="100%">
               <source src="demos\Golf Swing_Analyzer _Demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -172,7 +179,7 @@
           </p>
           <p>Tech Used: C++, Python, Matplotlib, CSV</p>
 
-          <div class="image-container">
+          <div id="trading" class="image-container">
             <img src="demos\Trading\Trading_Simulation_Demo1.png" alt="Trading Demo Photo 1">
             </img>
             <img src="demos\Trading\Trading_Simulation_Demo2.png" alt="Trading Demo Photo 2">
@@ -192,7 +199,7 @@
           </p>
           <p>Tech Used: Unity (C#), NEAT, JsonUtility</p>
 
-          <div class="video-container">
+          <div id="flappy"  class="video-container">
             <video controls width="100%">
               <source src="demos\Flappy_Bird_Demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -304,6 +311,31 @@
       const card = title.parentElement
       card.classList.toggle('expanded');
     });
+  });
+
+
+  window.addEventListener("load", function () {
+    const hash = window.location.hash;
+
+    if (hash) {
+      const target = document.querySelector(hash);
+
+      if (target) {
+        const card = target.closest(".card");
+
+        if (card && !card.classList.contains("expanded")) {
+          card.classList.add("expanded"); // auto open card
+        }
+
+        const offset = 80;
+        const topPos = target.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+          top: topPos,
+          behavior: "smooth"
+        });
+      }
+    }
   });
   </script>
 </body>

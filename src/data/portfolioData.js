@@ -4,7 +4,7 @@ export const experiences = [
       "Software Engineering Intern — NASA Marshall Space Flight Center",
     date: "June 2026 - August 2026",
     description:
-      "Developed a normalized PostgreSQL database for mass properties data, built Python pipelines for processing historical data, and created a FastAPI web application for search, hierarchy navigation, revision management, and data import/export."
+      "Developed a normalized PostgreSQL database for mass properties data replacing manual spreadsheet workflows, built Python pipelines for processing historical data, and created a FastAPI web application for search, hierarchy navigation, revision management, and data import/export."
   },
   {
     title:
